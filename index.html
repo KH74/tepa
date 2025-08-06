@@ -3,253 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terhi Hoikka | Funky Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Tepa.hoikka.com in Space</title>
     <style>
-        :root {
-            --primary-color: #ff00ff; /* Magenta */
-            --secondary-color: #00ffff; /* Cyan */
-            --accent-color: #ffff00; /* Yellow */
-            --background-color: #1a1a1a; /* Dark gray */
-            --text-color: #ffffff; /* White */
-        }
-        
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
             margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Hero Section */
-        .hero {
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            position: relative;
-            background: 
-                linear-gradient(45deg, var(--primary-color) 0%, transparent 50%),
-                linear-gradient(-45deg, var(--secondary-color) 0%, transparent 50%),
-                var(--background-color);
-            background-size: 200% 200%;
-            animation: gradient-animation 10s ease infinite;
-        }
-
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .hero h1 {
-            font-family: 'Bungee Shade', cursive;
-            font-size: 5rem;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            margin: 0;
-            text-shadow: 
-                4px 4px 0 var(--primary-color),
-                8px 8px 0 var(--secondary-color);
-            letter-spacing: 5px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .section {
-            padding: 60px 0;
-            border-bottom: 2px dashed var(--primary-color);
-        }
-
-        .section-title {
-            font-family: 'Bungee Shade', cursive;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--accent-color);
-            text-shadow: 2px 2px 0 var(--primary-color);
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .about-content img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 8px solid var(--secondary-color);
-            box-shadow: 0 0 20px var(--secondary-color);
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 20px var(--secondary-color); }
-            50% { box-shadow: 0 0 40px var(--primary-color); }
-        }
-
-        .about-content p {
-            font-size: 1.2rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .project-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            background-color: #000;
+            color: #fff;
             overflow: hidden;
-            border: 4px solid var(--secondary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            perspective: 800px; /* Creates a 3D perspective for the rotation effect */
         }
 
-        .project-card:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 10px 30px var(--primary-color);
-        }
-        
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 4px solid var(--primary-color);
+        .logo-container {
+            transform-style: preserve-3d;
+            animation: rotateLogo 30s linear infinite; /* 30-second continuous rotation */
         }
 
-        .project-info {
-            padding: 20px;
+        .logo {
+            font-size: 4rem;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            color: #00ffff; /* A vibrant cyan color */
         }
 
-        .project-info h3 {
-            font-family: 'Bungee Shade', cursive;
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-top: 0;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            text-align: center;
-        }
-
-        .contact-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 1.5rem;
-            margin: 0 20px;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            border-top: 2px dashed var(--secondary-color);
-            font-size: 0.9rem;
-            margin-top: 40px;
+        /* Keyframes for the rotation animation */
+        @keyframes rotateLogo {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
         }
     </style>
 </head>
 <body>
-
-    <header class="hero">
-        <h1>Terhi Hoikka</h1>
-        <h2>Head of Global Research and UX</h2>
-    </header>
-
-    <main class="container">
-        
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <img src="https://via.placeholder.com/250/00ffff/1a1a1a?text=Terhi" alt="Terhi Hoikka">
-                <p>Hello! I'm Terhi Hoikka, an experienced Head of CX/UX/Product with a passion for creating user-centered solutions. With a strong background in managing and mentoring multi-disciplined teams, I've had the pleasure of leading groups of UX, CX, Product, Research, UI, IA, Designers, and Developers. My work focuses on delivering agile development models that drive meaningful results for organizations.</p>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <h2 class="section-title">My Work</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x200/ff00ff/000000?text=Project+1" alt="Project 1">
-                    <div class="project-info">
-                        <h3>Agile Team Leadership</h3>
-                        <p>Details about leading a multi-disciplinary team to success using agile methodologies.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x200/00ffff/000000?text=Project+2" alt="Project 2">
-                    <div class="project-info">
-                        <h3>UX Research & Strategy</h3>
-                        <p>An overview of a large-scale UX research project and the resulting strategic recommendations.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x200/ffff00/000000?text=Project+3" alt="Project 3">
-                    <div class="project-info">
-                        <h3>Product Design & Launch</h3>
-                        <p>Showcasing the journey of a product from initial concept to a successful market launch.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-info">
-                <a href="https://www.linkedin.com/in/terhihoikka/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="mailto:terhi.hoikka@example.com">Email</a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2025 Terhi Hoikka. All Rights Reserved.</p>
-    </footer>
-
+    <div class="logo-container">
+        <h1 class="logo">tepa.hoikka.com</h1>
+    </div>
 </body>
 </html>
 

@@ -11,32 +11,93 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000;
+            background: linear-gradient(45deg, #0a0a20, #1a0a25, #0a0a20);
+            background-size: 200% 200%;
+            animation: gradient-shift 20s ease infinite;
             color: #fff;
             overflow: hidden;
             font-family: 'Courier New', Courier, monospace;
-            perspective: 800px; /* Creates a 3D perspective for the rotation effect */
+            perspective: 800px;
+            position: relative;
         }
 
+        /* Starfield Effect */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            animation: move-stars 100s linear infinite;
+        }
+
+        body::before {
+            box-shadow: 
+                -100px -100px #fff, 100px -200px #fff, 200px 50px #fff,
+                -300px 300px #fff, 400px -150px #fff, 500px 100px #fff,
+                -600px -200px #fff, 700px 250px #fff, -800px -50px #fff,
+                900px 400px #fff, -1000px -200px #fff, 1100px 150px #fff,
+                -1200px 300px #fff;
+            animation-duration: 100s;
+        }
+
+        body::after {
+            box-shadow: 
+                -50px -50px #fff, 50px -100px #fff, 150px 20px #fff,
+                -250px 150px #fff, 350px -75px #fff, 450px 50px #fff,
+                -550px -100px #fff, 650px 125px #fff, -750px -25px #fff,
+                850px 200px #fff, -950px -100px #fff, 1050px 75px #fff,
+                -1150px 150px #fff;
+            animation-duration: 150s; /* Slower animation for a parallax effect */
+        }
+        
         .logo-container {
             transform-style: preserve-3d;
-            animation: rotateLogo 30s linear infinite; /* 30-second continuous rotation */
+            animation: rotateLogo 20s linear infinite, hover 5s ease-in-out infinite;
         }
 
         .logo {
             font-size: 4rem;
             text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-            color: #00ffff; /* A vibrant cyan color */
+            color: #00ffff;
+            animation: pulse 4s infinite;
         }
 
-        /* Keyframes for the rotation animation */
+        /* Keyframes for the gradient background animation */
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Keyframes for the starfield animation */
+        @keyframes move-stars {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100%, 100%); }
+        }
+
+        /* Keyframes for the more interesting rotation */
         @keyframes rotateLogo {
-            from {
-                transform: rotateY(0deg);
-            }
-            to {
-                transform: rotateY(360deg);
-            }
+            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+            25% { transform: rotateX(15deg) rotateY(45deg) rotateZ(5deg); }
+            50% { transform: rotateX(0deg) rotateY(180deg) rotateZ(-10deg); }
+            75% { transform: rotateX(-15deg) rotateY(270deg) rotateZ(5deg); }
+            100% { transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg); }
+        }
+        
+        /* Keyframes for a subtle hovering effect */
+        @keyframes hover {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Keyframes for a subtle pulsing effect on the logo */
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+            50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
         }
     </style>
 </head>
@@ -46,4 +107,3 @@
     </div>
 </body>
 </html>
-

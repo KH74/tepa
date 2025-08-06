@@ -149,3 +149,107 @@
         
         .project-card img {
             width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            font-family: 'Bungee Shade', cursive;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 2px dashed var(--secondary-color);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Terhi Hoikka</h1>
+        <h2>Head of Global Research and UX</h2>
+    </header>
+
+    <main class="container">
+        
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <img src="https://via.placeholder.com/250/00ffff/1a1a1a?text=Terhi" alt="Terhi Hoikka">
+                <p>Hello! I'm Terhi Hoikka, an experienced Head of CX/UX/Product with a passion for creating user-centered solutions. With a strong background in managing and mentoring multi-disciplined teams, I've had the pleasure of leading groups of UX, CX, Product, Research, UI, IA, Designers, and Developers. My work focuses on delivering agile development models that drive meaningful results for organizations.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">My Work</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/ff00ff/000000?text=Project+1" alt="Project 1">
+                    <div class="project-info">
+                        <h3>Agile Team Leadership</h3>
+                        <p>Details about leading a multi-disciplinary team to success using agile methodologies.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/00ffff/000000?text=Project+2" alt="Project 2">
+                    <div class="project-info">
+                        <h3>UX Research & Strategy</h3>
+                        <p>An overview of a large-scale UX research project and the resulting strategic recommendations.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/ffff00/000000?text=Project+3" alt="Project 3">
+                    <div class="project-info">
+                        <h3>Product Design & Launch</h3>
+                        <p>Showcasing the journey of a product from initial concept to a successful market launch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/terhihoikka/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:terhi.hoikka@example.com">Email</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Terhi Hoikka. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+

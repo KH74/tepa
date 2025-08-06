@@ -20,8 +20,12 @@
 
         .logo-container {
             transform-style: preserve-3d;
-            animation: rotateLogoY 30s ease-in-out infinite, /* 30-second continuous rotation */
-                       rotateLogoZ 40s linear infinite; /* 90-second continuous rotation */
+            animation: rotateLogoY 30s ease-in-out infinite; /* 30-second continuous rotation */
+        }
+
+        .logo-inner-container {
+            transform-style: preserve-3d;
+            animation: rotateLogoZ 45s linear infinite; /* 45-second continuous rotation */
         }
 
         .logo {
@@ -52,7 +56,9 @@
 </head>
 <body>
     <div class="logo-container">
-        <h1 class="logo">tepa.hoikka.com</h1>
+        <div class="logo-inner-container">
+            <h1 class="logo">tepa.hoikka.com</h1>
+        </div>
     </div>
 </body>
 </html>
